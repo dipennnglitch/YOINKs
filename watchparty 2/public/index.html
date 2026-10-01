@@ -1,0 +1,29 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Velvet Room – watch together</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css"></head><body>
+<section id="lobby"><div class="ticket"><div class="bulbs"></div>
+<h1>Velvet Room</h1><p>Same video, same second, any distance apart.</p>
+<input id="name" placeholder="Your name" maxlength="20">
+<input id="code" placeholder="Room code" maxlength="12">
+<div class="row"><button id="join" class="ghost">Join room</button><button id="create">Open a new room</button></div>
+<div class="bulbs b2"></div></div></section>
+<main id="room" hidden>
+<header><b class="logo">Velvet Room</b><button id="copy" class="chip" title="Copy invite link"></button>
+<label class="chip"><input type="checkbox" id="open"> Everyone controls</label><span id="role" class="chip"></span></header>
+<div class="grid">
+<section class="stage"><nav class="tabs" data-for="stage"><button data-t="watch" class="on">Watch</button><button data-t="browse">Browse together</button></nav>
+<div class="pane on" id="watch"><div id="screen"><div class="empty">Paste a YouTube, Vimeo or video link below to start.</div></div><div id="float"></div><div id="cd"></div></div>
+<div class="pane" id="browse"><iframe id="frame" referrerpolicy="no-referrer"></iframe><p class="hint">Some sites refuse to be embedded. <a id="ext" target="_blank" rel="noopener">Open in new tab</a></p></div>
+<div id="heat" title="Reaction timeline: click a bar to jump there"></div><div class="bar"><input id="url" placeholder="YouTube / Vimeo / .mp4 link"><button id="load">Play for everyone</button>
+<label class="btn ghost">Upload video<input type="file" id="file" accept="video/*,audio/*" hidden></label></div>
+<div class="bar"><div id="emojis"></div><div class="grow"></div><button id="count" class="ghost">3-2-1 start</button><button id="mic" class="ghost" hidden>Mic</button><button id="cam" class="ghost" hidden>Camera</button><button id="call">Join voice &amp; video</button></div>
+<div id="tiles"></div></section>
+<aside><nav class="tabs" data-for="side"><button data-t="chat" class="on">Chat</button><button data-t="polls">Polls</button><button data-t="people">People</button></nav>
+<div class="pane on" id="chat"><div id="log"></div><div id="typing"></div>
+<div id="gifs" hidden><input id="gq" placeholder="Search GIFs"><div id="gg"></div></div><div class="bar"><button id="gif" class="ghost">GIF</button><input id="msg" placeholder="Message, /poll, /roll or paste a GIF link" maxlength="500"><button id="send">Send</button></div></div>
+<div class="pane" id="polls"><button id="ai" class="wide">Ask Claude for a poll about this video</button><div id="pl"></div></div>
+<div class="pane" id="people"><ul id="ppl"></ul></div></aside></div></main>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script><script src="https://www.youtube.com/iframe_api"></script>
+<script src="https://player.vimeo.com/api/player.js"></script><script src="app.js"></script></body></html>
